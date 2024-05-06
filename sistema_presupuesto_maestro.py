@@ -1,9 +1,9 @@
-opciones_activo = {1 : 'Efectivo', 2 : 'Clientes', 3 : 'Deudores Diversos', 4 : 'Funcionarios y Empleados',
-            5 : 'Inventario de materiales', 6 : 'Inventario de Producto Terminado',
-            7 : 'Terreno', 8 : 'Planta y Equipo', 9 : 'Depreciación Acumulada'}
+opciones_activo = { 1 : 'Efectivo', 2 : 'Clientes', 3 : 'Deudores Diversos', 4 : 'Funcionarios y Empleados',
+                    5 : 'Inventario de materiales', 6 : 'Inventario de Producto Terminado',
+                    7 : 'Terreno', 8 : 'Planta y Equipo', 9 : 'Depreciación Acumulada'}
 
-opciones_pasivo = {10 : 'Proveedores', 11 : 'Documentos por Pagar', 12 : 'ISR Por Pagar', 
-            13 : 'Préstamos Bancarios'}
+opciones_pasivo = { 10 : 'Proveedores', 11 : 'Documentos por Pagar', 12 : 'ISR Por Pagar', 
+                    13 : 'Préstamos Bancarios'}
 
 opciones_capital = {14 : 'Capital Contribuido', 15 : 'Capital Ganado'}
 
@@ -16,7 +16,11 @@ capital = {}
 # [{'Producto 1': [2323, 43, 12, 15]}, {'Producto 2': [32, 12, 5, 23]}, {'Producto 3': [12, 32, 43, 32]}, ]
 productos = []
 
-def registrar():
+# [{Materia A: 4000, Materia B: 2111, Materia C: 2000, Producto 1: 10000, Producto 2: 45454, Producto 3: }]
+inventario_inicial_semestre_1 = [{}]
+inventario_final_semestre_2 = {}
+
+def registrar_cuentas():
     print("\n| Las cuentas de Activo |\n")
     for k in opciones_activo.items():
         print(k)
@@ -66,7 +70,7 @@ def imprimir_productos_materiales():
 
 def requerimiento_materiales():
     while True:
-        #          {'CL':[matA, matB, matC, mano_obra]}
+        # {'CL':[matA, matB, matC, mano_obra]}
         producto = {}
         nombre_producto = input("\nIngresa el nombre del producto (o 'salir' para finalizar): \n")
         if nombre_producto.lower() == 'salir':
@@ -147,21 +151,30 @@ def requerimiento_materiales():
             
             
             
+def redaccion():
+  pass
 def informacion_inventarios():
     pass
 def menu():
-    print("\n---SISTEMA SUPER CONTABLE 3000---\n")
-    print("[1] Registrar Cuentas")
+    print("\n---Sistema de Presupuesto Maestro---\n")
+    print('Elementos de la redacción -------------------------------')
+    print("[1] Registrar cuentas")
     print("[2] Imprimir Balance General") # Considerar
-    print("[3] Requerimientos de Materiales")
+    print("[3] Requerimientos de materiales")
     print("[4] Imprimir Productos y materiales")
+    print("[5] Información de inventarios")
+    print("[6] Productos")
+    print("[7] Gastos de administración y ventas")
+    print("[8] Gastos de fabricación indirectos")
+    print('Elementos de la redacción -------------------------------')
+    
     print("[X] Salir")
 
 while True:
     menu()
     opcion = input("Ingresa una opción: ")
     if opcion == "1":
-        registrar()
+        registrar_cuentas()
         continue
     if opcion == "2":
         imprimir_balance()
@@ -174,9 +187,36 @@ while True:
     if opcion == "4":
         imprimir_productos_materiales()
         continue
+    if opcion == "5":
+        imprimir_productos_materiales()
+        continue
+    if opcion == "6":
+        imprimir_productos_materiales()
+        continue
+    if opcion == "7":
+        imprimir_productos_materiales()
+        continue
+    if opcion == "8":
+        imprimir_productos_materiales()
+        continue
     if opcion.lower() == "x":
         print("Saliendo del programa...")
         break
 
 
-import this
+# Programa
+
+
+# while True
+print("\n---Sistema de Presupuesto Maestro---\n")
+print('Elementos de la redacción -------------------------------')
+print("[1] Registrar cuentas")
+print("[2] Imprimir Balance General") 
+print("[3] Requerimientos de materiales")
+print("[4] Imprimir Productos y materiales")
+print("[5] Información de inventarios")
+print("[6] Productos")
+print("[7] Gastos de administración y ventas")
+print("[8] Gastos de fabricación indirectos")
+
+

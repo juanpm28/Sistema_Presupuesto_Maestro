@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presupuesto Maestro</title>
+</head>
+
+<body>
+  <h2>Presupuesto Maestro</h2>
+  <div id="cuentas-container"></div>
+
+  <script>
+    const cuentas = [
+      'Efectivo',
+      'Clientes',
+      'Deudores Diversos',
+      'Funcionarios y Empleados',
+      'Inventario de materiales',
+      'Inventario de Producto Terminado'
+    ];
+
+    const cuentasContainer = document.getElementById('cuentas-container');
+
+    cuentas.forEach(cuenta => {
+      const div = document.createElement('div');
+      const label = document.createElement('label');
+      label.textContent = cuenta;
+      const input = document.createElement('input');
+      input.type = 'number';
+      input.value = 0;
+
+      input.addEventListener('input', (event) => {
+        const valor = parseFloat(event.target.value);
+        console.log(`Valor de ${cuenta}: ${valor}`);
+        // Puedes guardar los valores en un objeto o enviarlos a un backend aquí
+      });
+
+      div.appendChild(label);
+      div.appendChild(input);
+      cuentasContainer.appendChild(div);
+    });
+  </script>
+</body>
+
+</html>
